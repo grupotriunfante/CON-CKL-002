@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -105,7 +104,6 @@
   <h1 style="font-size: 32px; margin: 0;">Checklist de Rotina - Assistente Fiscal CTD</h1>
 </div>
 <h5>CON-CKL-002 Rev:01</h5>
-<!-- Formulário de informações iniciais -->
 <div class="form-container" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
   <div style="flex: 2;">
     <label for="nome">Nome:</label>
@@ -132,8 +130,8 @@
       <option value="API">API</option>
       <option value="TPH">TPH</option>
       <option value="TCG">TCG</option>
-      <option value="TCG">CTD</option>
-     
+      <option value="CTD">CTD</option>
+      
     </select>
   </div>
 </div>
@@ -157,11 +155,11 @@
         const atividades = [
           ["Semanalmente","Realizar a analise da Apuração do ICMS","CON-POP-009","SICF","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Semanalmente","Buscar Valores das Entradas /ICMS , Saidas ICMS e Servicos Contratados","CON-POP-009","SICF","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
-          ["Semanalmente","Gerar os Arquivos de Entradas e Saidas ","CON-POP-009","SICF","Acionar o CPD da Unidade /  Assistente Fiscal da Contabilidade (Centralizadora)"],
+          ["Semanalmente","Gerar os Arquivos de Entradas e Saidas ","CON-POP-009","SICF","Acionar o CPD da Unidade /  Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Semanalmente","Fazer a importaçao das Entradas e Saidas do SICF para a Questor","CON-POP-009","Questor","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Semanalmente após a importação dos arquivos","Conferir dentro da Questor os valores de Entradas /ICMS , Saidas /ICMS e Serviços","CON-POP-009","Questor","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Semanalmente após a importação dos arquivos","Fazer a Identificação das NF's com obrigatoriedade DIFAL (Diferencial de Aliquota)","CON-POP-005","Questor","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
-          ["Semanalmente após a importação dos arquivos","Identificar as NF's  vendas clientes REF -RS","CON-POP-005","Gia-RS","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
+          ["Semanalmente após a importação dos arquivos","Identificar as NF's  vendas clientes REF -RS","CON-POP-005","Gia-RS","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["A partira da Terça-Feira de cada semana","Separar e Conferir as Notas Fiscais de Compra /Devolução /Consumo/Serviços Contratados /Retenções","-","Arquivo","Acionar ADM da Unidade /CPD"],
           ["A partira da Terça-Feira de cada semana","Realizar o lançamento de notas de serviços em cada Prefeitura","CON-POP-007","Site da Prefeitura","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["No primeiro dia de cada mês","Realizar a 'Analise da Apuração do ICMS","CON-POP-009","SICF","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
@@ -174,10 +172,10 @@
           ["Mensalmente","Fechar, Contabilizar PIS/CONFINS e Gerar e Enviar Sped Pis e Cofins","CON-POP-006","Questor","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Mensalmente","Realizar a Importação e Conferencia da Folha de Pagamento","CON-POP-013","Questor","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Mensalmente","Fazer o lançamento dos Alugueis Pagos de Pessoa Fisica com retenção de IRRFno REINF e distribuicao de lucros, caso ocorra","CON-POP-007","Questor","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
-          ["Mensalmente","Realizar a conciliacao e ajustes  das contas ativo e passivo da folha de pagamento e dos impostos","-","Questor","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
+          ["Mensalmente","Realizar a conciliacao e ajustes  das contas ativo e passivo da folha de pagamento e dos impostos","-","Questor","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Mensalmente","Fazer a Conferencia mensal das NF COM RETENCAO, e calculo dos impostos","-","Nota Anota","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Mensalmente","Realizar a analize dos balancetes","-","Questor","Acionar Gerente de Contabilidade da Centralizadora"],
-          ["Mensalmente","Fechar a  DCTF mensal","CON-POP-008","Aplicativo da Receita Federal","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
+          ["Mensalmente","Fechar a  DCTF mensal","CON-POP-008","Aplicativo da Receita Federal","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Mensalmente","Realizar a Conferencia e Rateio das Guias Fiscal ,RH","-","Guia de Pagamento","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Mensalmente","Realizar os Lancamentos do Imposto de Renda sobre adiantamento de Salarios","-","Questor","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
           ["Até o ultimo dia util do mês de Fevereiro","Fechar DIRF -Inclusão de todas as notas com retenção IRRF, PIS, COFINS , CSLL, Alugueis de pessoa fisica e DL(Distribuição de Lucro","CON-POP-010","Aplicativo da Receita Federal","Acionar Assistente Fiscal da Contabilidade (Centralizadora)"],
@@ -231,8 +229,9 @@
     checkboxes.forEach(c => {
       if (c !== checkbox) c.checked = false;
     });
-    const horaCampo = document.querySelector(`[name=hora_${nomeAtividade}]`);
-    const respostaCampo = document.querySelector(`[name=resposta_${nomeAtividade}]`);
+    // Correção: Uso de template string com aspas para o valor do atributo name
+    const horaCampo = document.querySelector(`input[name="hora_${nomeAtividade}"]`);
+    const respostaCampo = document.querySelector(`input[name="resposta_${nomeAtividade}"]`);
     horaCampo.value = new Date().toLocaleString('pt-BR');
     respostaCampo.value = valorSelecionado;
   }
@@ -249,9 +248,11 @@
     }
 
     let algumaMarcada = false;
+    // O loop deve usar o array 'atividades' para determinar o número de atividades
     for (let i = 1; i <= atividades.length; i++) {
-      const resposta = document.querySelector(`[name=resposta_atividade_${i}]`).value;
-      if (resposta === "Sim" || resposta === "Não") {
+      // Correção: Uso de template string com aspas para o valor do atributo name
+      const respostaCampo = document.querySelector(`input[name="resposta_atividade_${i}"]`);
+      if (respostaCampo && (respostaCampo.value === "Sim" || respostaCampo.value === "Não")) {
         algumaMarcada = true;
         break;
       }
@@ -291,7 +292,6 @@
   });
   
 </script>
-<!-- Botão de ajuda discreto no final da página -->
 <div style="text-align: center; margin-top: 60px; margin-bottom: 20px;">
   <a href="mailto:luis.correia@triunfante.com.br,marcelo.portella@triunfante.com.br,raphael.bortot@triunfante.com.br,daniela.nachbar@triunfante.com.br?subject=Ajuda%20-%20Checklist%20Coord%20Adm"
      style="
@@ -316,19 +316,32 @@
 <script>
   window.onload = function () {
     const dataInput = document.getElementById("data");
-    const hoje = new Date().toISOString().split("T")[0];
-    dataInput.value = hoje;
-    dataInput.min = hoje;
-    dataInput.max = hoje;
-    dataInput.readOnly = true; // impede que o usuário digite manualmente
+    // Obtém a data e hora local do dispositivo (Campinas, SP, Brasil)
+    const agora = new Date(); 
+    
+    const ano = agora.getFullYear();
+    // Mês é de 0 a 11, por isso somamos 1 e usamos padStart para ter sempre dois dígitos
+    const mes = String(agora.getMonth() + 1).padStart(2, '0'); 
+    // Dia do mês, com padStart para ter sempre dois dígitos
+    const dia = String(agora.getDate()).padStart(2, '0');
+
+    // Formata a data como 'YYYY-MM-DD'
+    const hojeFormatado = `${ano}-${mes}-${dia}`;
+    
+    // Define o valor do campo data para o dia atual
+    dataInput.value = hojeFormatado; 
+    // Restringe a data mínima ao dia atual, impedindo seleção de datas passadas
+    dataInput.min = hojeFormatado;   
+    // Restringe a data máxima ao dia atual, impedindo seleção de datas futuras
+    dataInput.max = hojeFormatado;   
+    // Impede que o usuário digite manualmente no campo
+    dataInput.readOnly = true;       
+    // Impede o clique para abrir o calendário de seleção de data
+    dataInput.style.pointerEvents = 'none'; 
+    // Opcional: Adiciona um estilo visual para indicar que o campo está desabilitado
+    dataInput.style.backgroundColor = '#e9ecef'; 
   };
 </script>
 
-
-
 </body>
-
-
-
-
 </html>
